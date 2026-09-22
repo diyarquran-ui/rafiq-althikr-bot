@@ -1,21 +1,17 @@
-name: تشغيل البوت
+name: Run Bot
 
 on:
   workflow_dispatch:
-  push:
 
 jobs:
-  تشغيل:
+  run:
     runs-on: ubuntu-latest
-
     steps:
-      - name: تحميل الملفات
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: تشغيل بايثون
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: تشغيل البوت
+      - name: Run bot
         run: python bot.py
